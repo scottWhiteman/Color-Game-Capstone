@@ -1,0 +1,12 @@
+.Results-container {
+  text-align: center;
+}
+
+.Results-container p, h2 {
+  color: #ddd;
+}
+
+.button-container button {
+  margin: 10px;
+  padding: 5px;
+}

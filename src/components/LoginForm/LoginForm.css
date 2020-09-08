@@ -1,0 +1,26 @@
+.LoginForm {
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+  padding: 20px;
+  margin: 20px 100px;
+  background-color: #035;
+  color: #fff;
+  border: 7px solid #013;
+  border-left: 7px solid #002244;
+  border-top: 7px solid #002244;
+  border-radius: 3em;
+}
+
+.LoginForm button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 24px;
+}
+
+@media all and (min-width: 800px) {
+  .LoginForm {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+}

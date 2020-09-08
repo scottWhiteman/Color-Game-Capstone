@@ -1,0 +1,35 @@
+nav {
+  display: inline-block;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  color: #ddd;
+  border: 2px solid #fff;
+  background-color: #111;
+}
+
+nav h2 {
+  margin: 10px;
+}
+
+.Header-tabs {
+  padding: 15px;
+}
+
+.Header-tabs > a {
+  margin: 5px;
+  padding: 5px 8px;
+  font-size: 20px;
+  color: #d60;
+  background-color: #333;
+  border: 1px solid #a71;
+  text-decoration-line: none;
+}
+
+.Header-tabs > a:hover {
+  background-color: #777;
+}
+
+.Header-tabs > a:visited {
+  color: #d60
+}

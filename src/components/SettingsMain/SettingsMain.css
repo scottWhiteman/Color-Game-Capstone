@@ -1,0 +1,67 @@
+.Change-User-Form {
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  margin: 20px 100px;
+  background-color: #333;
+  color: #fff;
+  border: 7px solid #242424;
+  border-left: 7px solid #444;
+  border-top: 7px solid #444;
+  border-radius: 3em;
+}
+
+.Change-User-Form button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.Delete-User-Container {
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  margin: 20px 100px;
+  background-color: #933;
+  color: #fff;
+  border: 7px solid #902424;
+  border-left: 7px solid #a44;
+  border-top: 7px solid #a44;
+  border-radius: 1em;
+}
+
+.Delete-User-Container button {
+  outline: none;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 16px;
+  background-color: #f22;
+  border: 2px solid #111;
+  border-radius: 5em;
+}
+
+.Delete-User-Container button:hover {
+  background-color: #333;
+  color: #f22;
+}
+
+.Delete-User-Container button:active {
+  background-color: #000;
+  color: #f55;
+}
+
+.Delete-User-Container button:disabled {
+  background-color: #333;
+  color: #000;
+}
+
+@media all and (min-width: 800px) {
+  .Change-User-Form {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  .Delete-User-Container {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+}
