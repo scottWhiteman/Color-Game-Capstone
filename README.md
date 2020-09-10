@@ -13,3 +13,7 @@ Each correct answer gives a point and incorrect answers end the game
 
 This app features login and registration of accounts.
 Users can delete or edit the password of the account.
+
+## Demo 
+
+https://colorgame-6d4clrflx.vercel.app/play
