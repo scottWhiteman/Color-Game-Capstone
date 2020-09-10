@@ -6,21 +6,24 @@ import UserContext from '../../contexts/UserContext';
 
 export default class Header extends React.Component {
   static contextType = UserContext;
+  //Clear local storages and context on logout
   handleLogout = () => {
     TokenService.clearAuthToken();
     TokenService.clearUserId();
     this.context.clearUser();
   }
 
+  //Display current user otherwise display not logged in
   displayUser = () => {
     const { user } = this.context
     console.log(user);
     if (user){
-      return `Logged in as ${user}`
+      return <>Logged in as <span className="login-highlight">{user}</span></>
     }
     return 'Not logged in';
   }
 
+  //Return Logged out options
   renderLogin = () => {
     return (
       <>
@@ -30,6 +33,7 @@ export default class Header extends React.Component {
     )
   }
 
+  //Return Logged in options
   renderLogout = () => {
     return (
       <>

@@ -9,6 +9,7 @@ export default class LoginPage extends React.Component {
     }
   }
   
+  //Go to play page after successful login
   handleLogin = () => {
     const { location, history } = this.props;
     const destination = (location.state || {}).from || '/play';

@@ -9,6 +9,7 @@ export default class RegistrationPage extends React.Component {
     }
   }
   
+  //Go to play page after successful registration
   handleRegister = () => {
     console.log("Registered");
     const { history } = this.props;

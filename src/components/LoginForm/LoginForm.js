@@ -12,6 +12,7 @@ export default class LoginForm extends React.Component {
 
   state = { error: null }
 
+  //Post login info to get authentication and token
   handleLogin = e => {
     e.preventDefault();
     this.setState({ error: null })
@@ -21,16 +22,18 @@ export default class LoginForm extends React.Component {
       username: username.value,
       password: password.value
     })
+      //Clear inputs and take data to local storage and context
       .then(res => {
         username.value = '';
         password.value = '';
         TokenService.saveAuthToken(res.authToken);
         TokenService.saveUserId(res.user_id);
         this.context.setUser(res.username);
-        //this.context.setUser(res.user_id)
         this.context.clearError();
+        //Run callback if given one
         this.props.onLoginSuccess();
       })
+      //Error state, display error
       .catch(res => {
         this.setState({ error: res.error })
       })

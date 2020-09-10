@@ -9,18 +9,25 @@ export default class GameMain extends React.Component {
     this.state = {
       color: this.randomColorCondition(),
       condition: this.randomCondition(),
-      //score: 0,
       rows: 3,
       boxes: []
     }
   }
+  static defaultProps = {
+    score: 0,
+    updateScore: () => {},
+    changeGameState: () => {}
+  }
+
   mounted = false;
   
+  //Return a random color choice for condition
   randomColorCondition = () => {
     const colors = ['red', 'green', 'blue'];
     return colors[Math.random()*colors.length << 0];
   }
 
+  //Return color rgb template
   generateRandomColor() {
     let rgbSet = [0, 0, 0].map(val => {
       return Math.floor(Math.random()*256);
@@ -28,6 +35,7 @@ export default class GameMain extends React.Component {
     return `rgb(${rgbSet[0]}, ${rgbSet[1]}, ${rgbSet[2]})`
   }
 
+  //Generate a random condition for checking choices
   randomCondition = () => {
     const conditions = {
       lowest: (choice) => {
@@ -57,10 +65,13 @@ export default class GameMain extends React.Component {
     return conditions[cons[cons.length * Math.random() << 0]];
   }
 
+  //Use current condition to check against chosen color
   checkColor = (choice, target) => {
+    //Prevent same color as background choices
     if (choice["red"] === 34 && choice["green"] === 34 && choice["blue"] === 34) {
       return null;
     }
+    //Correct choice
     if (this.state.condition(choice)) {
       const choiceIndex = target.getAttribute('index');
       const changedBoxes = this.state.boxes;
@@ -73,23 +84,22 @@ export default class GameMain extends React.Component {
         this.resetField();
       }
     }
+    //Wrong choice
     else {
       this.props.changeGameState(false);
       this.resetField();
-      // this.setState({
-      //   score: 0
-      // });
     }
   }
 
+  //Check if correct choices still remain
   checkRemaining = () => {
-    //console.log(this.state.boxes);
     return this.state.boxes.every(box => {
       const breakRgb = this.rgbTemplate(box)
       return (box === 'rgb(34, 34, 34)' || !this.state.condition(breakRgb));
     })
   }
 
+  //Return html for render to display
   renderBoxes = (j) => {
     let boxes = [];
     for (let i = 0; i < 5; i++) {
@@ -98,11 +108,13 @@ export default class GameMain extends React.Component {
     return boxes;
   }
 
+  //Create new field and new condition
   resetField = () => {
     this.generateBoxes();
     this.newConditions();
   }
 
+  //Create new boxes for field to display
   generateBoxes = () => {
     let boxes = [];
     for (let i = 0; i < this.state.rows; i++) {
@@ -115,6 +127,7 @@ export default class GameMain extends React.Component {
     })
   }
 
+  //New color and comparison conditions
   newConditions = () => {
     this.setState({
       color: this.randomColorCondition(),
@@ -122,6 +135,7 @@ export default class GameMain extends React.Component {
     })
   }
   
+  //Render entire row of colors
   renderRowHtml = () => {
     let rowHtml = [];
     for (let i = 0; i < this.state.rows; i++) {
@@ -134,6 +148,7 @@ export default class GameMain extends React.Component {
     return rowHtml;
   }
 
+  //Helper for breaking rgb strings into object
   rgbTemplate = (color) => {
     const breakRgb = color
       .slice(4, color.length-1)
@@ -148,6 +163,7 @@ export default class GameMain extends React.Component {
     };
     return assignRgb;
   }
+  
   
   componentDidMount = () => {
     this.mounted = true;

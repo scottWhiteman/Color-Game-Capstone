@@ -11,6 +11,8 @@ export default class RegistrationForm extends React.Component {
   }
 
   state = { error: null }
+
+  //Create a new account in database and login
   handleRegister = e => {
     e.preventDefault();
     this.setState({ error: null })
@@ -19,15 +21,18 @@ export default class RegistrationForm extends React.Component {
       this.setState({error: 'Passwords do not match'})
       return;
     }
+    //Create new user
     AuthApiService.postUser({
       username: username.value,
       password: password.value
     })
       .then(res => {
+        //Login to new user account
         AuthApiService.postLogin({
           username: username.value,
           password: password.value
         })
+          //Store user tokens to local storage
           .then(res => {
             TokenService.saveAuthToken(res.authToken);
             TokenService.saveUserId(res.user_id);
@@ -36,23 +41,13 @@ export default class RegistrationForm extends React.Component {
             password.value = '';
             repeat.value = '';
             this.context.setUser(res.username);
-            //this.context.setUser(res.user_id)
-            //console.log(TokenService.getAuthToken());
+            //Run callback if given one
             this.props.onRegistrationSuccess();
-            
           })
           .catch(res => {
             this.setState({ error: res.error })
           })
-        
-        
-        
-        //TokenService.saveAuthToken(res.authToken);
-        //TokenService.saveUserId(res.user_id);
-        //this.context.setUser(res.user_id)
-        //this.props.onRegistrationSuccess();
       })
-
       .catch(res => {
         this.setState({ error: res.error })
       })

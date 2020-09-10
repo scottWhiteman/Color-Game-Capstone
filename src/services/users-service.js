@@ -30,7 +30,28 @@ const UsersService = {
         if (!res.ok) {
           return res.json().then(e => Promise.reject(e));
         }
-        console.log(res);
+      })
+  },
+  getUserBlog(id) {
+    return fetch(`${config.API_ENDPOINT}/users/${id}/blog`)
+    .then(res => {
+      return (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    })
+  },
+  postUserBlog(id, newBlog) {
+    return fetch(`${config.API_ENDPOINT}/users/${id}/blog`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newBlog)
+    })
+    .then(res => {
+        if (!res.ok) {
+          return res.json().then(e => Promise.reject(e));
+        }
       })
   },
   validatePassword(password) {

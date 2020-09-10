@@ -11,14 +11,16 @@ import SettingsPage from '../../routes/SettingsPage/SettingsPage';
 import UserContext from '../../contexts/UserContext';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
+import LoggedInRoute from '../../RouteUtils/LoggedInRoute';
+import LoggedOutRoute from '../../RouteUtils/LoggedOutRoute';
 import config from '../../config';
-
-//import './App.css';
 
 export default class App extends React.Component{
   static contextType = UserContext;
   state = { hasError: false }
 
+  //Get local storage data, and get username from database
+  //Clear all contexts and local storage if not found
   componentDidMount() {
     this.context.clearError();
     if (TokenService.hasAuthToken() && TokenService.hasUserId()) {
@@ -49,9 +51,9 @@ export default class App extends React.Component{
           <Switch>
             <Route path={"/play"} component={GamePage} />
             <Route path={"/leader"} component={LeaderboardsPage} />
-            <Route path={"/login"} component={LoginPage} />
-            <Route path={"/register"} component={RegistrationPage} />
-            <Route path={"/settings"} component={SettingsPage} />
+            <LoggedOutRoute path={"/login"} component={LoginPage} />
+            <LoggedOutRoute path={"/register"} component={RegistrationPage} />
+            <LoggedInRoute path={"/settings"} component={SettingsPage} />
             <Route exact path={"/"} component={HomePage} />
             <Route component={NotFoundPage} />
           </Switch>

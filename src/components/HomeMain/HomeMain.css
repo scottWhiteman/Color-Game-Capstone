@@ -1,0 +1,18 @@
+.Home-Main {
+  color: #fff;
+  margin: 30px auto;
+  padding: 20px;
+  width: 400px;
+  background-color: #555;
+  border-radius: 2em;
+}
+
+.Home-Main h2 {
+  margin: 20px 0;
+}
+
+.Home-Main p {
+  font-size: 18px;
+  color: #fff;
+  margin: 30px 5px;
+}

@@ -10,8 +10,8 @@ export default class LeaderboardsMain extends React.Component {
     userScores: []
   }
 
+  //Get top score of each user from database in order from highest to lowest
   componentDidMount = () => {
-    //this.context.clearError();
     ScoreApiService.getTopScores()
       .then(scores => {
         this.setState({
@@ -21,7 +21,7 @@ export default class LeaderboardsMain extends React.Component {
       .catch()
       
   }
-  
+  //Render scores to html
   listScores = () => {
     return this.state.userScores.map((user, rank) => {
       return (

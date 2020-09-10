@@ -9,27 +9,36 @@ import UserContext from '../../contexts/UserContext';
 export default class Results extends React.Component {  
   static contextType = UserContext;
   
+  static defaultProps = {
+    score: 0,
+    changeGameState: () => {}
+  }
+
   state = {
     login: null,
     submitted: false
   }
   
+  //Toggle login state from 'login' or null
   handleLogin = () => {
     this.setState({
       login: this.state.login === 'login' ? null : 'login'
     });
   }
   
+  //Toggle register stare from 'register' or null
   handleRegister = () => {
     this.setState({
       login: this.state.login === 'register' ? null : 'register'
     })
   }
   
+  //Play game again with callback
   handlePlay = (e) => {
     this.props.changeGameState(true);
   }
 
+  //Display Login or Registration form
   renderForm = () => {
     if (this.state.login === 'login') {
       return <LoginForm onLoginSuccess={this.onLoginSuccess} />
@@ -38,6 +47,7 @@ export default class Results extends React.Component {
     }
   }
 
+  //Return login or registration buttons
   renderLoginSet = () => {
     return (
       <>
@@ -47,12 +57,17 @@ export default class Results extends React.Component {
     )
   }
 
+  //Callback for successful login
+  //Hide login form after success
   onLoginSuccess = () => {
     this.setState({
       login: null
     });
   }
 
+  //Callback for successful registration
+  //Hide registration form after success
+  //Submit score after registration
   onRegistrationSuccess = () => {
     console.log("Registered")
     this.setState({
@@ -61,6 +76,8 @@ export default class Results extends React.Component {
     this.submitScore();
   }
 
+  //Post score to database
+  //Hide submit button after success
   submitScore = () => {
     const userId = TokenService.getUserId();
     const score = this.props.score;
