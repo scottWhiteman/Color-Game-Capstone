@@ -16,4 +16,4 @@ Users can delete or edit the password of the account.
 
 ## Demo 
 
-https://colorgame-6d4clrflx.vercel.app/play
+https://colorgame-6d4clrflx.vercel.app
