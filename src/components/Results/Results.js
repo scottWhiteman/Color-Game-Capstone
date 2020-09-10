@@ -69,7 +69,6 @@ export default class Results extends React.Component {
   //Hide registration form after success
   //Submit score after registration
   onRegistrationSuccess = () => {
-    console.log("Registered")
     this.setState({
       login: null
     });
@@ -84,7 +83,6 @@ export default class Results extends React.Component {
     ScoreApiService.postScore(userId, score)
       .then(res => {
         this.setState({submitted: true})
-        console.log('score submitted!')
       })
       .catch();
   }

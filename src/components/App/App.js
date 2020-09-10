@@ -26,7 +26,6 @@ export default class App extends React.Component{
     if (TokenService.hasAuthToken() && TokenService.hasUserId()) {
       AuthApiService.getUserById(TokenService.getUserId())
         .then(user => {
-          console.log(user);
           this.context.setUser(user.username);
         })
         .catch(err => {
@@ -37,7 +36,6 @@ export default class App extends React.Component{
   }
 
   static getDerivedStateFromError(error) {
-    console.error(error)
     return { hasError: true }
   }
   

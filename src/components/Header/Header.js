@@ -16,7 +16,6 @@ export default class Header extends React.Component {
   //Display current user otherwise display not logged in
   displayUser = () => {
     const { user } = this.context
-    console.log(user);
     if (user){
       return <>Logged in as <span className="login-highlight">{user}</span></>
     }

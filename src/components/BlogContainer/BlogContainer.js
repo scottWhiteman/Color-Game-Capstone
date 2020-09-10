@@ -46,7 +46,6 @@ export default class BlogContainer extends React.Component {
   submitBlog = (e) => {
     e.preventDefault();
     const { blogpost } = e.target
-    console.log(blogpost.value)
     UsersService.postUserBlog(TokenService.getUserId(), {blogpost: blogpost.value})
       .then(() => {
         this.setState({
