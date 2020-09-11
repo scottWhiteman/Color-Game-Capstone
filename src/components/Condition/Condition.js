@@ -19,10 +19,10 @@ export default class Condition extends React.Component {
   
   render() {
     return (
-      <div className="Condition-container">
+      <section className="Condition-container">
         <h2>Select colors where {this.renderColorText()} is the {this.renderConditionText()} within its RGB value</h2>
         <h3>You have {this.props.score} point{this.props.score !== 1 && 's'}!</h3>
-      </div>
+      </section>
     );
   }
 }

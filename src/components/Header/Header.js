@@ -51,14 +51,14 @@ export default class Header extends React.Component {
       <nav className='Header'>
         <h3>{this.displayUser()}</h3>
         <h2>Color Game</h2>
-        <div className='Header-tabs'>
+        <section className='Header-tabs'>
           <Link to='/play'>Play</Link>
           <Link to='/'>About</Link>
           <Link to='leader'>Leaderboard</Link>
           {TokenService.hasAuthToken()
             ? this.renderLogout()
             : this.renderLogin()}
-        </div>
+        </section>
       </nav>
     );
   }

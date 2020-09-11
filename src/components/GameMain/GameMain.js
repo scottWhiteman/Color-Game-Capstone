@@ -186,15 +186,12 @@ export default class GameMain extends React.Component {
 
   render() {
     return (
-      <div className="GameMain">
-        <h1>Playing Game!</h1>
-        <div className="main">
-          <div className="field" id="game-field">
-            {this.renderRowHtml()}
-          </div>
-          <Condition score={this.props.score} color={this.state.color} condition={this.state.condition.name}/>
+      <section className="Game-Main">
+        <div className="field" id="game-field">
+          {this.renderRowHtml()}
         </div>
-      </div>
+        <Condition score={this.props.score} color={this.state.color} condition={this.state.condition.name}/>
+      </section>
     );
   }
 }

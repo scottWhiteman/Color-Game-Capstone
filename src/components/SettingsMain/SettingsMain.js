@@ -62,8 +62,8 @@ export default class SettingsMain extends React.Component {
 
   render() {
     return (
-      <div className="Settings-Main">
-        <div className="flex-container">
+      <section className="Settings-Main">
+        <section className="flex-container">
           <div>
             <form className="Change-User-Form" onSubmit={this.handleSubmit}>
               <label forhtml="password">Change Password</label><br/>
@@ -79,9 +79,9 @@ export default class SettingsMain extends React.Component {
             <input name="delete-input" onChange={this.checkDelete}></input><br/>
             <button disabled={!this.state.delete} onClick={this.handleDelete}>Confirm Delete</button>
           </div>
-        </div>
+        </section>
         <BlogContainer />
-      </div>
+      </section>
     );
   }
 }

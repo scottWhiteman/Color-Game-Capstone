@@ -43,9 +43,7 @@ export default class LoginForm extends React.Component {
     const {error} = this.state;
     return (
       <form className="LoginForm" onSubmit={this.handleLogin}>
-        <div className="error-container">
-          {error && <p>{error}</p>}
-        </div>
+          { error && <section className="error-container"><p>{error}</p></section>}
         <label forhtml="username">Enter a Username:</label><br/>
         <input name="username" className="username" type="text" /><br/>
         <label forhtml="password">Password:</label><br/>

@@ -54,9 +54,10 @@ export default class RegistrationForm extends React.Component {
   }
   
   render() {
+    const {error} = this.state;
     return (
       <form className="RegistrationForm" onSubmit={this.handleRegister}>
-        {this.state.error && <p>{this.state.error}</p>}
+        {error && <section className="error-container"><p>{error}</p></section>}
         <label forhtml="username">Enter a Username:</label><br/>
         <input name="username"  type="text" /><br/>
         <label forhtml="password">Password:</label><br/>
