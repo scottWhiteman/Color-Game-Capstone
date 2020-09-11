@@ -50,4 +50,4 @@ Components:
     NotFoundMain
 ## Demo 
 
-https://colorgame-6d4clrflx.vercel.app
+https://colorgame.scottwhiteman.vercel.app
