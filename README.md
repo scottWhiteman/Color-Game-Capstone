@@ -14,6 +14,40 @@ Each correct answer gives a point and incorrect answers end the game
 This app features login and registration of accounts.
 Users can delete or edit the password of the account.
 
+## Screenshots
+
+![Mobile view](/screenshots/Screen2.png)
+![Desktop view](/screenshots/Screen3.png)
+![Leaderboards](/screenshots/Screen1.png)
+![Results](/screenshots/Screen4.png)
+
+## Components
+
+Primary pages:
+  Game
+  Home/About
+  Leaderboards
+  Login
+  Registration
+  Settings
+  404 Page
+
+The main app links to each page; most pages have a set of unique components, though some are used multiple times, such as the login and registration forms.
+
+Components:
+  App
+    Header
+    GameMain
+      ColorBox
+      Condition
+      Results
+    HomeMain
+    Leaderboards
+    LoginForm
+    RegistrationForm
+    SettingsMain
+      BlogContainer
+    NotFoundMain
 ## Demo 
 
 https://colorgame-6d4clrflx.vercel.app

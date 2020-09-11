@@ -51,8 +51,8 @@ export default class Results extends React.Component {
   renderLoginSet = () => {
     return (
       <>
-        <button onClick={this.handleLogin}>Login!</button>
-        <button onClick={this.handleRegister}>Register!</button>
+        <button className="results-login" onClick={this.handleLogin}>Login!</button>
+        <button className="results-register" onClick={this.handleRegister}>Register!</button>
       </>
     )
   }
@@ -89,17 +89,20 @@ export default class Results extends React.Component {
   
   render() {
     return (
+      <>
       <div className="Results-container">
         <h2>You got {this.props.score} points!</h2>
         {!TokenService.hasAuthToken && <p>You can login or register to post your score</p>}
         {this.state.submitted && <p>Your score has been submitted!</p>}
         <div className="button-container">
           {!TokenService.hasAuthToken() && this.renderLoginSet()}
-          {(TokenService.hasAuthToken() && !this.state.submitted) && <button onClick={this.submitScore}>Submit Score</button>}
-          <button onClick={this.handlePlay}>Play Again!</button>
+          {(TokenService.hasAuthToken() && !this.state.submitted) && <button className="results-submit" onClick={this.submitScore}>Submit Score</button>}
+          <button className="play-again" onClick={this.handlePlay}>Play Again!</button>
         </div>
-        {this.state.login && this.renderForm()}
+        
       </div>
+      {this.state.login && this.renderForm()}
+      </>
     );
   }
 }

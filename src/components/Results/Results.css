@@ -1,12 +1,121 @@
 .Results-container {
   text-align: center;
+  background-color: #443;
+  border: 4px solid #111;
+  margin: 20px 100px;
+  padding: 20px;
+  width: auto;
+  max-width: 600px;
+
 }
 
-.Results-container p, h2 {
+.Results-container p, .Results-container h2 {
   color: #ddd;
 }
 
+.button-container {
+  margin: 20px 10px;
+  margin-bottom: 0;
+}
+
 .button-container button {
-  margin: 10px;
-  padding: 5px;
+  font-size: 20px;
+  margin: 10px 10px;
+  padding: 10px;
+  outline: none;
+  border: 4px solid #222;
+  border-left: 4px solid #777;
+  border-top: 4px solid #777;
+  border-radius: 3em;
+}
+
+.button-container button:hover {
+  background-color: #ccf;
+  border: 4px solid #444;
+  border-left: 4px solid #222;
+  border-top: 4px solid #222;
+}
+
+.button-container button:active {
+  background-color: #fff;
+  border: 4px solid #444;
+  border-left: 4px solid #222;
+  border-top: 4px solid #222;
+}
+
+.button-container .results-login {
+  background-color: #047;
+  color: #fff;
+  border: 4px solid #002;
+  border-left: 4px solid #124;
+  border-top: 4px solid #124;
+}
+
+.button-container .results-login:hover {
+  background-color: #035;
+  border: 4px solid #012;
+  border-left: 4px solid #002;
+  border-top: 4px solid #002;
+}
+
+.button-container .results-login:active {
+  background-color: #047;
+  color: #fff;
+  border: 4px solid #012;
+  border-left: 4px solid #002;
+  border-top: 4px solid #002;
+}
+
+.button-container .results-register {
+  background-color: #260;
+  color: #fff;
+  border: 4px solid #021;
+  border-left: 4px solid #242;
+  border-top: 4px solid #242;
+}
+
+.button-container .results-register:hover {
+  background-color: #240;
+  border: 4px solid #222;
+  border-left: 4px solid #021;
+  border-top: 4px solid #021;
+}
+
+.button-container .results-register:active {
+  background-color: #260;
+  color: #fff;
+  border: 4px solid #222;
+  border-left: 4px solid #021;
+  border-top: 4px solid #021;
+}
+
+.button-container .play-again {
+  background-color: #222;
+  color: #fff;
+  border: 4px solid #333;
+  border-left: 4px solid #888;
+  border-top: 4px solid #888;
+}
+
+.button-container .play-again:hover {
+  background-color: #111;
+  color: #fff;
+  border: 4px solid #666;
+  border-left: 4px solid #333;
+  border-top: 4px solid #333;
+}
+
+.button-container .play-again:active {
+  background-color: #334;
+  color: #fff;
+  border: 4px solid #666;
+  border-left: 4px solid #333;
+  border-top: 4px solid #333;
+}
+
+@media all and (min-width: 800px) {
+  .Results-container {
+    max-width: 600px;
+    margin: 20px auto;
+  }
 }

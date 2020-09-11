@@ -28,13 +28,14 @@ h4 {
 
 .field {
   background-color: #444;
+  width: 400px;
   margin: auto;
   padding: 30px;
   border: 2px solid #999;
 }
 
 .row {
-  min-width: 500px;
+  min-width: 350px;
   margin: 0 10px;
   padding: 0 20px;
   background-color: #222;
@@ -44,15 +45,16 @@ h4 {
 
 .row .box {
   height: 100%;
-  margin: 10px;
-  padding: 40px;
+  margin: 5px;
+  padding: 30px;
   box-sizing: border-box;
   background-color: #aaa;
 }
 
 .Condition-container {
   border: 2px solid #fff;
-  margin: 25px;
+  width: 450px;
+  margin: 25px auto;
   background-color: #444;
   color: white;
 }
@@ -61,24 +63,28 @@ h4 {
   margin: 5px 10px;
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 1100px) {
   .main {
     flex-direction: row;
     padding: 0 50px;
   }
   
   .field {
+    width: auto;
     margin: auto;
     flex: 2;
   }
 
   .row .box {
+    margin: 10px;
     padding: 50px;
   }
 
   .Condition-container {
     text-align: center;
     display: inline-block;
+    width: auto;
+    margin: 25px;
     height: 100%;
     flex: 1;
     padding: 115px 0;
