@@ -35,19 +35,31 @@ Primary pages:
 The main app links to each page; most pages have a set of unique components, though some are used multiple times, such as the login and registration forms.
 
 Components:
-  App
-    Header
-    GameMain
-      ColorBox
-      Condition
-      Results
-    HomeMain
-    Leaderboards
-    LoginForm
-    RegistrationForm
-    SettingsMain
-      BlogContainer
-    NotFoundMain
+App
+  
+  Header
+  
+  GameMain
+  
+    ColorBox
+  
+    Condition
+  
+    Results
+  
+  HomeMain
+  
+  Leaderboards
+  
+  LoginForm
+  
+  RegistrationForm
+  
+  SettingsMain
+  
+    BlogContainer
+  
+  NotFoundMain
 ## Demo 
 
 https://colorgame.scottwhiteman.vercel.app
