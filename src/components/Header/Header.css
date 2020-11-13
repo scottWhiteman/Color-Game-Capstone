@@ -2,6 +2,7 @@ nav {
   display: inline-block;
   padding: 10px 0;
   width: 100%;
+  min-width: 400px;
   text-align: center;
   color: #ddd;
   border: 2px solid #fff;
@@ -14,17 +15,19 @@ nav h2 {
 
 .Header-tabs {
   padding: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .Header-tabs > a {
   margin: 5px;
   padding: 5px 8px;
-  font-size: 24px;
+  font-size: 20px;
   color: #f80;
   background-color: #333;
   border: 1px solid #a71;
   text-decoration-line: none;
-  
 }
 
 .Header-tabs > a:hover {
@@ -42,4 +45,10 @@ nav h2 {
   margin: 0 5px;
   color: #ff4;
   border: 3px solid #222;
+}
+
+@media all and (min-width: 600px) {
+  .Header-tabs > a {
+    font-size: 24px;
+  }
 }

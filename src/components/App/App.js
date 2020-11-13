@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Header from '../Header/Header';
 import HomePage from '../../routes/HomePage/HomePage';
 import GamePage from '../../routes/GamePage/GamePage';
@@ -42,6 +43,9 @@ export default class App extends React.Component{
   render() {
     return (
       <div className="App">
+        <Helmet>
+          <title>Color Game</title>
+        </Helmet>
         <header className="Header">
           <Header />
         </header>

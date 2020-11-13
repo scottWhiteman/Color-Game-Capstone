@@ -60,6 +60,10 @@
   color: #000;
 }
 
+input {
+  width: 150px;
+}
+
 @media all and (min-width: 800px) {
   .Settings-Main {
     flex-direction: row;

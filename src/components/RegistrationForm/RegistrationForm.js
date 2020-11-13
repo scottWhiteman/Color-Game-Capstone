@@ -45,12 +45,12 @@ export default class RegistrationForm extends React.Component {
             this.props.onRegistrationSuccess();
           })
           .catch(res => {
-            this.setState({ error: res.error })
-          })
+            this.setState({ error: res.error });
+          });
       })
       .catch(res => {
-        this.setState({ error: res.error })
-      })
+        this.setState({ error: res.error });
+      });
   }
   
   render() {
