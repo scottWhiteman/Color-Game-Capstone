@@ -63,3 +63,6 @@ App
 ## Demo 
 
 https://colorgame.scottwhiteman.vercel.app
+
+## Server Repo
+https://github.com/scottWhiteman/Color-Game-Capstone-Server
